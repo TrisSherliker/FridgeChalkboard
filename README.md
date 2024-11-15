@@ -8,9 +8,9 @@ This very simple project spins up a small web server to serve content on your lo
 - displays content for any number of people at /index.html, refreshing periodically (once every 5 minutes, by default), and
 - allows anyone to set the displayed content, at /admin.html
 
-![index page screenshot](/assets/index-screenshot.png)
+![index page screenshot](index-screenshot.png)
 
-![admin page screenshot](/assets/admin-screenshot.png)
+![admin page screenshot](admin-screenshot.png)
 
 # Why?
 
