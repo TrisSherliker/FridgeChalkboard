@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <style>
+        body {
+            font-family: "Comic Sans MS", "Chalkboard", sans-serif;
+            background-color: #2b2b2b;
+            color: #fff;
+            text-align: center;
+        }
+        form {
+            margin: 20px auto;
+            padding: 10px;
+            border: 1px solid #fff;
+            width: 80%;
+        }
+        textarea {
+            width: 100%;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Admin Panel</h1>
+    <form id="updateForm">
+	    <label for="person1">person1NameHere:</label><!--Enter person 1 name here-->
+        <textarea id="person1" rows="4"></textarea>
+
+	<label for="boy2">person2NameHere:</label> <!--Enter person 2 name here-->
+        <textarea id="boy2" rows="4"></textarea>
+
+        <label for="central">Shared central space:</label>
+        <textarea id="central" rows="4"></textarea>
+
+        <button type="submit">Update</button>
+    </form>
+    <script>
+        async function fetchContent() {
+            const response = await fetch('content.json');
+            const content = await response.json();
+            document.getElementById('person1').value = content.person1;
+            document.getElementById('boy2').value = content.boy2;
+            document.getElementById('central').value = content.central;
+        }
+
+        document.getElementById('updateForm').addEventListener('submit', async (event) => {
+            event.preventDefault();
+            const content = {
+                person1: document.getElementById('person1').value,
+                boy2: document.getElementById('boy2').value,
+                central: document.getElementById('central').value,
+            };
+            await fetch('/update-content', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(content),
+            });
+            alert('Content updated!');
+        });
+
+        window.onload = fetchContent;
+    </script>
+</body>
+</html>
