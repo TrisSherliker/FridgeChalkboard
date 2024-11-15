@@ -24,11 +24,12 @@ Inspired by the simplicity making an auto-refreshing noticeboard as posted by HN
 
 1. Place all files into a single directory.
 2. Configure:
-  a. **Set names:** In `index.html`, replace "Person1Name" and "Person2Name" with the names of your people.
-  b. **Set port**: In `server.js`, replace the default port `3000` with your preferred port.
-  c. **Install packages:** Install the `express` js package and any others you need. If using npm package manager, use: 'npm install express`.
-3. Start the server: `node server.js`. It will print the IP address and port at which it is serving.
-4. Navigate to that displayed IP address in a browser on a computer at your home network. The template content will be displayed.
-5. Visit `.../admin.html` to edit the displayed content, pressing `Update` when finished.
+  - **Set names:** In `index.html`, replace "Person1Name" and "Person2Name" with the names of your people.
+  - **Set port**: In `server.js`, replace the default port `3000` with your preferred port.
+  - **Install packages:** Install the `express` js package and any others you need. If using npm package manager, use: 'npm install express`.
+
+4. Start the server: run the command `node server.js`. Note down the IP address and port at which it is serving.
+5. Navigate to that displayed IP address in a browser on a computer at your home network. The template content will be displayed.
+6. Visit `.../admin.html` to edit the displayed content, pressing `Update` when finished.
 
 Dates are displayed UK-style, and update automatically.
